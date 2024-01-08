@@ -1,0 +1,156 @@
+
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.title-text {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.card-destaques {
+  display: flex;
+  margin-top: 20px;
+  width: 400px;
+  flex-direction: column;
+  margin: 15px 15px 15px 15px;
+}
+
+.card-destaques:hover {
+  text-decoration: underline;
+}
+
+.card-destaques-image-div {
+  display: flex;
+  width: 400px;
+  height: 300px;
+}
+
+.card-destaques-image {
+  width: 400px;
+}
+
+.card-destaques-category {
+  font-weight: 700;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  margin-bottom: 5px;
+}
+
+.card-destaques-title {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  line-height: 2rem;
+}
+
+.card-destaques-date {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.card-destaques-detail {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  margin-top: 15px;
+}
+
+.card-up {
+  display: flex;
+  margin-top: 20px;
+  width: 440px;
+  flex-direction: row;
+  margin: 15px 15px 15px 15px;
+}
+
+.card-up:hover {
+  text-decoration: underline;
+}
+
+.title-up {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title-up-text {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.title-up-order {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: row;
+}
+
+.search-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.card-up-image-div {
+  display: flex;
+  width: 180px;
+  height: 150px;
+}
+
+.card-up-image {
+  width: 180px;
+}
+
+.card-up-text {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 150px;
+  margin-left: 20px;
+}
+
+.card-up-category {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  font-size: 12px;
+}
+
+.card-up-title {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  line-height: 1.3rem;
+}
+
+.card-up-date {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+.card-up-detail {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  margin-top: 6px;
+  line-height: 1.0rem;
+}

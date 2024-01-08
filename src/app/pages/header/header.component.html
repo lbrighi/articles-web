@@ -1,0 +1,10 @@
+<div class="row" style="display: flex; flex-direction: column; background-color: #1d1e2c;">
+  <div style="height: 70px;  display: flex;  align-items: center;  justify-content: center; border-bottom: 1px gray solid;">
+    <form (ngSubmit)="onSearch()" #form="ngForm" aria-labelledby="title">
+      <input nbInput fullWidth [(ngModel)]="search.detail" #email="ngModel" name="email" id="input-email"
+        placeholder="Pesquisar" fieldSize="large" autofocus [required]="true"
+        style="width: 400px;">
+      <button type="submit">Pesquisar</button>
+    </form>
+  </div>
+</div>

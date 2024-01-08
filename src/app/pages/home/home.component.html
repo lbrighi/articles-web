@@ -1,0 +1,94 @@
+<div class="row" style="display: flex; width: 100%; justify-content: center; margin-top: 20px;">
+  <!-- <img src="../../../assets/images/culinaria.jpg"> -->
+  <div id="destaques" style="display: flex; width: 70%; flex-direction: column;" *ngIf="search === '' && hightLightsArticles.length > 0">
+    <div class="title-text" style="border-bottom: 1px gray solid; height: 40px;">
+      Destaques
+    </div>
+    <div class="body">
+
+      <div class="card-destaques" *ngFor="let article of hightLightsArticles" (click)="goToArticle(article.id.toString())" style="cursor: pointer;">
+        <div class="card-destaques-image-div">
+          <img class="card-destaques-image"
+          src="{{formatImage(article.cover_image)}}">
+        </div>
+        <div class="card-destaques-category">
+          {{article.article_category}}
+        </div>
+        <div class="card-destaques-title">
+          {{article.title}}
+        </div>
+        <div class="card-destaques-date">
+          {{article.created_at}}
+        </div>
+        <div class="card-destaques-detail">
+          {{formatDescription(article.description,20)}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="ultimas-publicacoes" style="display: flex; width: 70%; flex-direction: column; margin-top: 20px;">
+    <div class="title-up" style="border-bottom: 1px gray solid; height: 40px;">
+      <div class="title-up-text">
+        Últimas publicações
+      </div>
+      <div class="title-up-order">
+        <div>
+          paginação
+        </div>
+        <div style="margin-left: 10px;">
+          <select>
+            <option value="10">10</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="search-header" *ngIf="search != ''">
+      <div>
+        <span style="font-size: 14px;">
+          Você está buscando por: <span style="font-weight: 800;">{{search}}</span>
+        </span>
+        <span style="margin-left: 20px;">
+          <button (click)="clear()">Limpar pesquisa</button>
+        </span>
+      </div>
+      <div>
+        {{total}} Resultados encontrados
+      </div>
+    </div>
+    <div class="body">
+
+      <div class="card-up" *ngFor="let article of articles"  (click)="goToArticle(article.id.toString())" style="cursor: pointer;">
+        <div class="card-up-image-div">
+          <img class="card-up-image"
+          src="{{formatImage(article.cover_image)}}">
+        </div>
+        <div class="card-up-text">
+          <div class="card-up-category">
+            {{article.article_category}}
+          </div>
+          <div class="card-up-title">
+            {{article.title}}
+          </div>
+          <div class="card-up-date">
+            {{article.created_at}}
+          </div>
+          <div class="card-up-detail">
+            {{formatDescription(article.description,12)}}
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <ngx-pager
+      [(currentPage)]="pagination.currentPage"
+      (currentPageChange)="load()"
+      [perPage]="pagination.perPage"
+      [total]="total"
+      *ngIf="articles.length > 0">
+    </ngx-pager>
+  </div>
+</div>

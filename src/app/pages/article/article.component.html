@@ -1,0 +1,27 @@
+<div class="row" style="display: flex; width: 100%; justify-content: center; margin-top: 20px;">
+  <!-- <img src="../../../assets/images/culinaria.jpg"> -->
+  <div id="destaques" style="display: flex; width: 70%; flex-direction: column;">
+    <div class="body">
+
+      <div class="card">
+        <div class="card-image-div">
+          <img class="card-image"
+          src="{{formatImage(article.cover_image)}}">
+        </div>
+        <div class="card-category">
+          {{article.article_category}}
+        </div>
+        <div class="card-title">
+          {{article.title}}
+        </div>
+        <div class="card-date">
+          {{article.created_at}}
+        </div>
+        <div class="card-detail">
+          {{article.description}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

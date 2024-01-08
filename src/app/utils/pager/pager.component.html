@@ -1,0 +1,66 @@
+<div style="display: flex; justify-content: center; margin-top: 15px;">
+  <nav class="ng2-smart-pagination-nav ng-star-inserted">
+    <ul class="ng2-smart-pagination pagination">
+      <li class="ng2-smart-page-item page-item li-pager" [ngClass]="{'disabled' : currentPage === 1}">
+        <a aria-label="Last" class="ng2-smart-page-link a-pager page-link" style="cursor: pointer; color: #007bff;"
+          *ngIf="currentPage > 1" (click)="onPageClick(1)">
+          <span aria-hidden="true" class="span-pager">«</span>
+        </a>
+        <a aria-label="First" class="ng2-smart-page-link a-pager page-link" *ngIf="currentPage === 1">
+          <span aria-hidden="true" class="span-pager" [ngStyle]="{ 'color': currentPage === 1 ? '#cfcece' : '' }">«</span>
+        </a>
+      </li>
+      <li class="ng2-smart-page-item page-item li-pager" [ngClass]="{'disabled' : currentPage === 1}">
+        <a aria-label="Last" class="ng2-smart-page-link a-pager page-link" style="cursor: pointer; color: #007bff;"
+          *ngIf="currentPage > 1" (click)="onPageClick(currentPage-1)">
+          <span aria-hidden="true" class="span-pager">&lt;</span>
+        </a>
+        <a aria-label="Prev" class="ng2-smart-page-link a-pager page-link a-pager page-link"
+          style="display: flex;align-items: center;justify-content: center;"
+          *ngIf="currentPage === 1">
+          <span aria-hidden="true" class="span-pager"
+            [ngStyle]="{ 'color': currentPage === 1 ? '#cfcece' : '' }">&lt;</span>
+        </a>
+      </li>
+      <li class="ng2-smart-page-item page-item li-pager ng-star-inserted" *ngFor="let page of pages"
+        [ngClass]="{'active' : currentPage === page}">
+        <a class="ng2-smart-page-link page-link a-pager ng-star-inserted span-pager"
+          style="display: flex;align-items: center;justify-content: center;cursor: pointer; color: #007bff;"
+          (click)="onPageClick(page)" *ngIf="currentPage !== page">
+          <span class="span-pager">
+            {{page}}
+          </span>
+        </a>
+        <span class="ng2-smart-page-link a-pager page-link ng-star-inserted span-pager" *ngIf="currentPage === page"
+          style="display: flex;align-items: center;justify-content: center;">
+          {{page}}
+        </span>
+      </li>
+      <li class="ng2-smart-page-item li-pager page-item" [ngClass]="{'disabled' : currentPage === pages.length}">
+        <a aria-label="Next" class="ng2-smart-page-link a-pager page-link page-link-next"
+          style="display: flex;align-items: center;justify-content: center;cursor: pointer; color: #007bff;"
+          *ngIf="currentPage !== pages.length" (click)="onPageClick(currentPage+1)">
+          <span aria-hidden="true" class="span-pager">&gt;</span>
+        </a>
+        <a aria-label="First" class="ng2-smart-page-link a-pager page-link" *ngIf="currentPage === pages.length">
+          <span aria-hidden="true" class="span-pager" [ngStyle]="{ 'color': currentPage === pages.length ? '#cfcece' : '' }"
+            *ngIf="currentPage === pages.length">
+            &gt;
+          </span>
+        </a>
+      </li>
+      <li class="ng2-smart-page-item li-pager page-item" [ngClass]="{'disabled' : currentPage === pages.length}">
+        <a aria-label="Last" class="ng2-smart-page-link a-pager page-link" style="cursor: pointer; color: #007bff;"
+          *ngIf="currentPage !== pages.length" (click)="onPageClick(pages.length)">
+          <span aria-hidden="true" class="span-pager">»</span>
+        </a>
+        <a aria-label="First" class="ng2-smart-page-link a-pager page-link" *ngIf="currentPage === pages.length">
+          <span aria-hidden="true" class="span-pager"
+            [ngStyle]="{ 'color': currentPage === pages.length ? '#cfcece' : '' }">
+            »
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
